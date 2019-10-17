@@ -2,72 +2,38 @@
 <html>
 <head>
 	<title>Password Visibility</title>
-
-	<style type="text/css">
-		body {
-			margin: 1em auto;
-			max-width: 40em;
-			width: 88%;
-		}
-
-		label {
-			display: block;
-			width: 100%;
-		}
-
-		input {
-			margin-bottom: 1em;
-		}
-
-		[type="checkbox"] {
-			margin-bottom: 0;
-			margin-right: 0.25em;
-		}
-	</style>
+	<link rel="stylesheet" href="css/styles.css">
+	
 </head>
 <body>
 
 	<h1>Password Visibility</h1>
+	<div id="form-box">
+		<p>Enter your username and password to login.</p>
+	  
+		<form>
+			<div>
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username">
+			</div>
 
-	<p>Enter your username and password to login.</p>
+			<div>
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password">
+			</div>
 
-	<form>
-		<div>
-			<label for="username">Username</label>
-			<input type="text" name="username" id="username">
-		</div>
+			<div>
+				<label for="show-password">
+					<input type="checkbox" name="show-passwords" id="show-password">
+					Show password
+				</label>
+			</div>
 
-		<div>
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password">
-		</div>
-
-		<div>
-			<label for="show-password">
-				<input type="checkbox" name="show-passwords" id="show-password">
-				Show password
-			</label>
-		</div>
-
-		<p>
-			<button type="submit">Log In</button>
-		</p>
-	</form>
-
-	<script>
-		//creates variable that references #show-password checkbox
-		var togglePasswordView = document.querySelector('#show-password');
-
-		//puts an event listener on checkbox that toggles the type 
-		//of password input field so we can see the password
-		togglePasswordView.addEventListener('click', function(event) {
-			var password = document.querySelector('#password');
-			if (password.type === 'password' ) {
-				password.type = 'text';
-			} else {
-				password.type = 'password';
-			}
-		});
-	</script>
+			<p>
+				<button type="submit">Log In</button>
+			</p>
+		</form>
+	</div>
+	<script src="js/toggle-password-visibility.js"></script>
 </body>
 </html>
